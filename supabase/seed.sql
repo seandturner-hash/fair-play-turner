@@ -1,0 +1,123 @@
+-- Fair Play seed: 99 cards + 2 Unicorn Space cards (101 total)
+-- Run once after applying the migration, or after clearing old cards.
+-- Cards start as 'Unassigned' so Sean & Tarragon can deal their hand together.
+
+insert into cards (title, category, owner, illustration_key, is_unicorn_space) values
+
+-- ── HOME (22 cards) ───────────────────────────────────────────────────────────
+('Childcare Helpers (Kids)',                    'Home', 'Unassigned', 'childcare',           false),
+('Cleaning',                                    'Home', 'Unassigned', 'housecleaning',       false),
+('Dishes',                                      'Home', 'Unassigned', 'dishes',              false),
+('Ironing',                                     'Home', 'Unassigned', 'ironing',             false),
+('Rubbish',                                     'Home', 'Unassigned', 'trash',               false),
+('Groceries',                                   'Home', 'Unassigned', 'grocery_shopping',    false),
+('Home Furnishings',                            'Home', 'Unassigned', 'home_decor',          false),
+('Home Goods and Supplies',                     'Home', 'Unassigned', 'home_supplies',       false),
+('Home Maintenance',                            'Home', 'Unassigned', 'home_maintenance',    false),
+('Home Purchase (Rental, Mortgage, Insurance)', 'Home', 'Unassigned', 'home_purchase',       false),
+('Hosting',                                     'Home', 'Unassigned', 'hosting',             false),
+('Laundry',                                     'Home', 'Unassigned', 'laundry',             false),
+('Lawn and Plants',                             'Home', 'Unassigned', 'yardwork',            false),
+('Mail',                                        'Home', 'Unassigned', 'mail',                false),
+('Meals (Kids: School Lunches)',                'Home', 'Unassigned', 'school_lunches',      false),
+('Meals (Weekday Breakfast)',                   'Home', 'Unassigned', 'meal_planning',       false),
+('Meals (Weekday Dinner)',                      'Home', 'Unassigned', 'cooking',             false),
+('Meals (Weekend Dinner)',                      'Home', 'Unassigned', 'cooking',             false),
+('Memories and Photos',                         'Home', 'Unassigned', 'family_photos',       false),
+('Money Manager',                               'Home', 'Unassigned', 'bills',               false),
+('Storage, Garage & Seasonality',              'Home', 'Unassigned', 'closet',              false),
+('Tidying, Organising & Donations',            'Home', 'Unassigned', 'tidying',             false),
+
+-- ── OUT (22 cards) ────────────────────────────────────────────────────────────
+('Cars',                                        'Out',  'Unassigned', 'car_maintenance',     false),
+('Birthday Celebrations (Other kids)',          'Out',  'Unassigned', 'birthday_kids',       false),
+('Calendar Keeper',                             'Out',  'Unassigned', 'scheduling',          false),
+('Cash',                                        'Out',  'Unassigned', 'cash',                false),
+('Charity, Community & Good Deeds',            'Out',  'Unassigned', 'charitable_giving',   false),
+('Civic Engagement & Cultural Enrichment',     'Out',  'Unassigned', 'community',           false),
+('Electronics and IT',                         'Out',  'Unassigned', 'electronics',         false),
+('Extra-Curricular (Kids: Non Sports)',         'Out',  'Unassigned', 'extracurricular',     false),
+('Extra-Curricular (Kids: Sports)',             'Out',  'Unassigned', 'sports',              false),
+('First Aid, Safety and Emergency',            'Out',  'Unassigned', 'emergency_prep',      false),
+('Packing & Unpacking (kids local)',            'Out',  'Unassigned', 'moving',              false),
+('Packing and Unpacking (travel)',              'Out',  'Unassigned', 'travel',              false),
+('Points, Miles & Coupons',                    'Out',  'Unassigned', 'bills',               false),
+('Returns & Store Credits',                    'Out',  'Unassigned', 'returns',             false),
+('School Breaks (Kids: Non Summer)',            'Out',  'Unassigned', 'camp',                false),
+('School Breaks (Kids: Summer)',                'Out',  'Unassigned', 'summer_planning',     false),
+('School Forms (Kids)',                         'Out',  'Unassigned', 'school_admin',        false),
+('Social Plans (Couples)',                      'Out',  'Unassigned', 'date_night',          false),
+('Transportation (Kids)',                       'Out',  'Unassigned', 'transportation',      false),
+('Travel',                                      'Out',  'Unassigned', 'travel',              false),
+('Tutoring and Coaching (Kids)',                'Out',  'Unassigned', 'tutoring',            false),
+('Weekend Plans',                               'Out',  'Unassigned', 'family_fun',          false),
+
+-- ── CAREGIVING (23 cards) ─────────────────────────────────────────────────────
+('Bathing & Grooming (Kids)',                  'Caregiving', 'Unassigned', 'bathing',              false),
+('Bedtime Routine (Kids)',                      'Caregiving', 'Unassigned', 'bedtime_routine',      false),
+('Clothes and Accessories (Kids)',             'Caregiving', 'Unassigned', 'childrens_clothing',   false),
+('Dental (Kids)',                              'Caregiving', 'Unassigned', 'dentist_kids',         false),
+('Diapering & Potty Training (Kids)',          'Caregiving', 'Unassigned', 'diapering',            false),
+('Estate Planning & Life Insurance',           'Caregiving', 'Unassigned', 'estate_planning',      false),
+('Birth Control & Family Planning',            'Caregiving', 'Unassigned', 'health_adult',         false),
+('Friendships & Social Media (Kids)',          'Caregiving', 'Unassigned', 'friendships_kids',     false),
+('Grooming & Wardrobe (Sean)',                 'Caregiving', 'Unassigned', 'self_care',            false),
+('Grooming & Wardrobe (Tarragon)',             'Caregiving', 'Unassigned', 'self_care',            false),
+('Health Insurance',                           'Caregiving', 'Unassigned', 'insurance',            false),
+('Homework, Projects & School Supplies (Kids)','Caregiving', 'Unassigned', 'homework',             false),
+('Medical & Healthy Living (Kids)',            'Caregiving', 'Unassigned', 'health_kids',          false),
+('Morning Routine (Kids)',                     'Caregiving', 'Unassigned', 'morning_routine',      false),
+('Parents & In-Laws',                          'Caregiving', 'Unassigned', 'aging_parents',        false),
+('Pets',                                       'Caregiving', 'Unassigned', 'pets',                 false),
+('School Service (Kids)',                      'Caregiving', 'Unassigned', 'school_admin',         false),
+('School Transitions (Kids)',                  'Caregiving', 'Unassigned', 'school_admin',         false),
+('Self-Care (Sean)',                            'Caregiving', 'Unassigned', 'self_care',            false),
+('Self-Care (Tarragon)',                        'Caregiving', 'Unassigned', 'self_care',            false),
+('Special Need & Mental Health (Kids)',        'Caregiving', 'Unassigned', 'special_needs',        false),
+('Teacher Communication (Kids)',               'Caregiving', 'Unassigned', 'school_communication', false),
+('Watching (Kids)',                             'Caregiving', 'Unassigned', 'childcare',            false),
+
+-- ── MAGIC (21 cards) ──────────────────────────────────────────────────────────
+('Adult Friendships (Sean)',                   'Magic', 'Unassigned', 'couples_friends',    false),
+('Adult Friendships (Tarragon)',               'Magic', 'Unassigned', 'couples_friends',    false),
+('Birthday Celebrations (Your kids)',          'Magic', 'Unassigned', 'birthday_kids',      false),
+('Discipline & Screen-Time (Kids)',            'Magic', 'Unassigned', 'discipline',         false),
+('Extended Family',                            'Magic', 'Unassigned', 'aging_parents',      false),
+('Fun & Playing (Kids)',                       'Magic', 'Unassigned', 'indoor_play',        false),
+('Gestures of Love (Kids)',                    'Magic', 'Unassigned', 'emotional_support',  false),
+('Gifts (Family)',                             'Magic', 'Unassigned', 'gifts',              false),
+('Gifts (VIPs)',                               'Magic', 'Unassigned', 'gifts',              false),
+('Hard Questions (Kids)',                      'Magic', 'Unassigned', 'family_meetings',    false),
+('Holiday Cards',                              'Magic', 'Unassigned', 'greeting_cards',     false),
+('Christmas',                                  'Magic', 'Unassigned', 'holiday_traditions', false),
+('Informal Education (Kids)',                  'Magic', 'Unassigned', 'tutoring',           false),
+('Magical Beings (Kids)',                      'Magic', 'Unassigned', 'unicorn_space',      false),
+('Marriage & Romance',                         'Magic', 'Unassigned', 'partnership',        false),
+('Middle of the Night Comfort (Kids)',         'Magic', 'Unassigned', 'bedtime_routine',    false),
+('Partner Coach',                              'Magic', 'Unassigned', 'partnership',        false),
+('Showing-Up and Participating (Kids)',        'Magic', 'Unassigned', 'extracurricular',    false),
+('Spirituality',                               'Magic', 'Unassigned', 'spiritual',          false),
+('Thank You Notes',                            'Magic', 'Unassigned', 'thank_you_notes',    false),
+('Values & Good Deeds (Kids)',                 'Magic', 'Unassigned', 'charitable_giving',  false),
+
+-- ── WILD (11 cards) ───────────────────────────────────────────────────────────
+('Aging',                                      'Wild', 'Unassigned', 'aging_parents',      false),
+('Ailing Parent',                              'Wild', 'Unassigned', 'aging_parents',      false),
+('Death',                                      'Wild', 'Unassigned', 'grief',              false),
+('First Year of Infant''s Life',               'Wild', 'Unassigned', 'baby_gear',          false),
+('Glitch in the Matrix or Daily Disruption',   'Wild', 'Unassigned', 'glitch',             false),
+('Home Renovation',                            'Wild', 'Unassigned', 'home_maintenance',   false),
+('Job Loss & Money Problems',                  'Wild', 'Unassigned', 'financial_planning', false),
+('Moving',                                     'Wild', 'Unassigned', 'moving',             false),
+('New Job',                                    'Wild', 'Unassigned', 'professional_dev',   false),
+('Serious Illness',                            'Wild', 'Unassigned', 'health_adult',       false),
+('Welcoming a Child into the Home',            'Wild', 'Unassigned', 'welcoming_child',    false),
+
+-- ── UNICORN SPACE (2 cards, pre-assigned) ─────────────────────────────────────
+('Unicorn Space — Sean',     'Magic', 'Sean',     'unicorn_space', true),
+('Unicorn Space — Tarragon', 'Magic', 'Tarragon', 'unicorn_space', true);
+
+-- Default settings row
+insert into settings (key, value)
+values ('next_checkin_date', '')
+on conflict (key) do nothing;

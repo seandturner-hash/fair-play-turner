@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&amp;display=swap');
+      text { font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif; }
+    </style>
+  </defs>
+
+  <!-- small playing card icon -->
+  <rect x="1" y="5" width="28" height="38" rx="5" fill="#F5EFE0" stroke="#C2614A" stroke-width="1.5"/>
+  <text x="15" y="19" font-size="9" fill="#C2614A" text-anchor="middle" font-style="italic" font-family="Georgia, serif">♠</text>
+  <line x1="5" y1="25" x2="25" y2="25" stroke="#EDE4CE" stroke-width="1"/>
+  <text x="15" y="39" font-size="9" fill="#C2614A" text-anchor="middle" font-style="italic" font-family="Georgia, serif" transform="rotate(180 15 35)">♠</text>
+
+  <!-- wordmark: Fair in brown, Play in terracotta -->
+  <text x="38" y="36" font-size="30" font-style="italic" fill="#3D1F0A">Fair</text>
+  <text x="108" y="36" font-size="30" font-style="italic" fill="#C2614A">Play</text>
+</svg>
