@@ -39,7 +39,13 @@ function useAutoSave(cardId, field) {
 // ── Editable textarea ──────────────────────────────────────────────────────
 function EditableField({ cardId, field, label, value: initialValue, placeholder, rows = 3 }) {
   const [value, setValue] = useState(initialValue || '')
+  const [editing, setEditing] = useState(false)
   const save = useAutoSave(cardId, field)
+
+  // Sync from latest card data when not actively editing
+  useEffect(() => {
+    if (!editing) setValue(initialValue || '')
+  }, [initialValue, editing])
 
   function handleChange(e) {
     setValue(e.target.value)
@@ -53,6 +59,8 @@ function EditableField({ cardId, field, label, value: initialValue, placeholder,
         className="field-textarea"
         value={value}
         onChange={handleChange}
+        onFocus={() => setEditing(true)}
+        onBlur={() => setEditing(false)}
         placeholder={placeholder || `Add ${label?.toLowerCase() || 'notes'}…`}
         rows={rows}
         aria-label={label}
@@ -62,7 +70,15 @@ function EditableField({ cardId, field, label, value: initialValue, placeholder,
 }
 
 // ── Detail panel (portal — lives outside the 3D transform context) ─────────
-function CardDetailPanel({ card, onClose, onOwnerChange }) {
+function CardDetailPanel({ card: initialCard, onClose, onOwnerChange }) {
+  const [card, setCard] = useState(initialCard)
+
+  // Always fetch fresh data when the panel opens so we get the latest field values
+  useEffect(() => {
+    supabase.from('cards').select('*').eq('id', initialCard.id).single()
+      .then(({ data }) => { if (data) setCard(data) })
+  }, [initialCard.id])
+
   const isDiscarded  = card.owner === 'Discarded'
   const isUnassigned = card.owner === 'Unassigned'
   const otherPlayer  = card.owner === 'Sean' ? 'Tarragon' : card.owner === 'Tarragon' ? 'Sean' : null
